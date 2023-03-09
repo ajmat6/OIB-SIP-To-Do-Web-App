@@ -4,19 +4,19 @@ window.addEventListener('load' , () => {
     const z = document.querySelector('#tasks');
     
     x.addEventListener('submit' , (e) => {
-        e.preventDefault(); //stops from refreshing the page as when you submit a form then it refreshes the page. So this prevent default function will prevent the default action that usually takes place while doing an action.
+        e.preventDefault(); 
 
         const newtask = y.value;
 
-        if(!newtask) //if the user haven't added any task and still try to submitt. 
+        if(!newtask) 
         {
             alert("Please enter a task");
         }
 
         else
         {
-            const task1 = document.createElement("div"); //creates an instance of an element of type div
-            task1.classList.add("task"); //or usme phir task naam vaale class ko add kardo(that is also in div)
+            const task1 = document.createElement("div");
+            task1.classList.add("task"); 
 
             const task1content = document.createElement("div");
             task1content.classList.add("content");
@@ -24,7 +24,7 @@ window.addEventListener('load' , () => {
             const task1text = document.createElement("input");
             task1text.classList.add("text");
             task1text.value = newtask;
-            task1text.setAttribute("readonly" , "readonly") //not able to edit the set task
+            task1text.setAttribute("readonly" , "readonly") 
 
             const actions = document.createElement("div");
             actions.classList.add("action");
@@ -38,14 +38,14 @@ window.addEventListener('load' , () => {
             actionDelete.innerHTML = "Delete";
             
             z.appendChild(task1);
-            task1.appendChild(task1content); //adding the content at the end of the list.
+            task1.appendChild(task1content); 
             task1content.appendChild(task1text);
 
             task1.appendChild(actions);
             actions.appendChild(actionDelete);
             actions.appendChild(actionEdit);
             
-            y.value=""; //after adding a task add your new task here will become empty.
+            y.value=""; 
             
             actionEdit.addEventListener('click' , () => {
                 if(actionEdit.innerHTML == "Edit")
